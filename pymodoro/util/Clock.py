@@ -9,7 +9,7 @@ class Clock(object):
         self.pymodoro = pymodoro
 
     def reset(self, start_time):
-        """Reset the timer, 25 minutes of work, 5 minutes of play."""
+        """Set the clock to start_time."""
         self.time = start_time
 
     def tick(self):

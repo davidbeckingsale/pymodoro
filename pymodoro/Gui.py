@@ -69,18 +69,24 @@ class Gui:
         self.window.set_title("Pymodoro")
 
         self.main_box = gtk.VBox(False, 5)
+        self.button_box = gtk.HBox(False, 5)
         self.bottom_box = gtk.HBox(False, 5)
         self.info_box = gtk.VBox(False, 5)
 
         self.start_pomodoro_button = gtk.Button("Start a pomodoro...")
         self.start_pomodoro_button.connect('clicked', self.pymodoro.start_pomodoro)
 
+        self.stop_button = gtk.Button("Stop and Reset")
+        self.stop_button.connect('clicked', self.pymodoro.stop)
+
         self.time_left_label = gtk.Label("0:00 remaining")
         self.num_pomodoros_label = gtk.Label("0 pomodoros completed")
         self.num_big_breaks_label = gtk.Label("0 extended breaks taken")
 
         self.window.add(self.main_box)
-        self.main_box.pack_start(self.start_pomodoro_button)
+        self.main_box.pack_start(self.button_box)
+        self.button_box.pack_start(self.start_pomodoro_button)
+        self.button_box.pack_start(self.stop_button)
         self.main_box.pack_start(self.bottom_box)
         self.bottom_box.pack_start(self.time_left_label)
         self.bottom_box.pack_start(self.info_box)

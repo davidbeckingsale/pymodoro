@@ -15,6 +15,16 @@ class Pymodoro:
         self.gui = gui
         self.current_clock = self.work_clock 
 
+    def stop(self, widget = None):
+        """Stop all timers and reset"""
+        self.is_working = False
+        self.is_break = False
+        self.is_big_break = False
+
+        self.work_clock.reset(0)
+        self.break_clock.reset(0)
+        self.big_break_clock.reset(0)
+        
     def update_clocks(self):
         """Make the clock tick"""
         if self.is_working:
