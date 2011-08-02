@@ -29,19 +29,19 @@ class Pymodoro:
     def start_pomodoro(self, widget = None):
         """docstring for start_pomodoro"""
         self.is_working = True
-        self.work_clock.reset(20)
+        self.work_clock.reset(1500)
         self.current_clock = self.work_clock
 
     def start_break(self):
         """docstring for start_break"""
         self.is_break = True
-        self.break_clock.reset(10)
+        self.break_clock.reset(300)
         self.current_clock = self.break_clock
 
     def start_extended_break(self):
         """docstring for start_extended_break"""
         self.is_big_break = True
-        self.big_break_clock.reset(30)
+        self.big_break_clock.reset(1800)
         self.current_clock = self.big_break_clock
 
     def clock_expired(self):
